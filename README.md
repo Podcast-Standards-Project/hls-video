@@ -74,6 +74,12 @@ Video podcasting shouldn't require abandoning RSS or forcing creators into propr
 
 This is an open demonstration of a proposed standard. We welcome feedback, improvements, and real-world testing from app developers.
 
+To iterate on the XML spec, I think we should follow this approach:
+
+- Use GitHub Issues for discussion - Big picture questions, spec debates, compatibility concerns
+- Use PRs for concrete changes - Actual XML modifications to [the sample RSS feed](https://podcast-standards-project.github.io/hls-video/feed.xml)
+- Keep iterating on the live RSS feed - This will allow app developers to test on a live RSS feed
+
 **Specifically** we'd love to see some apps support HLS video streaming.
 
 ---
