@@ -6,13 +6,13 @@
     <title>HLS Video Podcast - Episode Preview</title>
     
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="https://podcast-standards-project.github.io/hls-podcast/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://podcast-standards-project.github.io/hls-podcast/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://podcast-standards-project.github.io/hls-podcast/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://podcast-standards-project.github.io/hls-podcast/favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="https://podcast-standards-project.github.io/hls-podcast/favicon/android-chrome-512x512.png">
-    <link rel="apple-touch-icon" href="https://podcast-standards-project.github.io/hls-podcast/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="https://podcast-standards-project.github.io/hls-podcast/favicon/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="https://podcast-standards-project.github.io/hls-video/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://podcast-standards-project.github.io/hls-video/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://podcast-standards-project.github.io/hls-video/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://podcast-standards-project.github.io/hls-video/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="https://podcast-standards-project.github.io/hls-video/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="https://podcast-standards-project.github.io/hls-video/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="https://podcast-standards-project.github.io/hls-video/favicon/site.webmanifest">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -163,7 +163,7 @@
 
             <div class="links">
                 <a href="https://podcast-standards-project.github.io/hls-video/feed.xml" class="btn btn-primary" target="_blank">📟 View the RSS feed XML source</a>
-                <a href="https://media.transistor.fm/346d955d/8ba0f3fb.mp3" class="btn btn-secondary" target="_blank">🎧 Audio only version (MP3)</a>
+                <a href="https://github.com/Podcast-Standards-Project/hls-video" class="btn btn-secondary" target="_blank">💻 View GitHub repo</a>
             </div>
 
             <div class="tech-info">
@@ -179,52 +179,58 @@
 &lt;podcast:source uri="https://customer-wr8fi2zppse29pbk.cloudflarestream.com/18e048e0c31c0c238b46ddf581b25174/manifest/video.m3u8"/&gt;
 &lt;/podcast:alternateEnclosure&gt;</code></pre>
             </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid #e2e8f0;">
+                <a href="https://podstandards.org/2025/05/27/a-new-paradigm-for-video-podcasts-hls-streaming/" class="btn btn-primary" target="_blank">Learn more about Podcast Standards</a>
+            </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script>
-        const video = document.getElementById('video');
-        const status = document.getElementById('status');
-        const hlsUrl = 'https://customer-wr8fi2zppse29pbk.cloudflarestream.com/18e048e0c31c0c238b46ddf581b25174/manifest/video.m3u8';
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('video');
+            const status = document.getElementById('status');
+            const hlsUrl = 'https://customer-wr8fi2zppse29pbk.cloudflarestream.com/18e048e0c31c0c238b46ddf581b25174/manifest/video.m3u8';
 
-        function updateStatus(message, type) {
-            status.textContent = message;
-            status.className = `status ${type}`;
-        }
+            function updateStatus(message, type) {
+                status.textContent = message;
+                status.className = `status ${type}`;
+            }
 
-        if (Hls.isSupported()) {
-            const hls = new Hls({
-                debug: false,
-            });
-            
-            hls.loadSource(hlsUrl);
-            hls.attachMedia(video);
-            
-            hls.on(Hls.Events.MEDIA_ATTACHED, function () {
-                updateStatus('✅ HLS video ready to play', 'ready');
-            });
+            // Wait a bit for HLS.js to load from CDN
+            setTimeout(function() {
+                if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+                    const hls = new Hls({
+                        debug: false,
+                    });
+                    
+                    hls.loadSource(hlsUrl);
+                    hls.attachMedia(video);
+                    
+                    hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+                        updateStatus('✅ HLS video ready to play', 'ready');
+                    });
 
-            hls.on(Hls.Events.ERROR, function (event, data) {
-                console.error('HLS error:', data);
-                updateStatus('❌ Error loading video stream', 'error');
-            });
+                    hls.on(Hls.Events.ERROR, function (event, data) {
+                        console.error('HLS error:', data);
+                        updateStatus('❌ Error loading video stream', 'error');
+                    });
 
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            // Safari native HLS support
-            video.src = hlsUrl;
-            video.addEventListener('loadedmetadata', function () {
-                updateStatus('✅ Video ready to play (native HLS)', 'ready');
-            });
-            video.addEventListener('error', function () {
-                updateStatus('❌ Error loading video stream', 'error');
-            });
-        } else {
-            updateStatus('❌ HLS not supported in this browser', 'error');
-        }
+                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                    // Safari native HLS support
+                    video.src = hlsUrl;
+                    video.addEventListener('loadedmetadata', function () {
+                        updateStatus('✅ Video ready to play (native HLS)', 'ready');
+                    });
+                    video.addEventListener('error', function () {
+                        updateStatus('❌ Error loading video stream', 'error');
+                    });
+                } else {
+                    updateStatus('❌ HLS not supported in this browser', 'error');
+                }
+            }, 100);
+        });
     </script>
-
-    <!-- Cloudflare Pages Analytics -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f88d3068c5141af9fdad3535a40923f"}'></script>
 </body>
 </html>
