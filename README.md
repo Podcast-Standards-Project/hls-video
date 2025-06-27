@@ -2,6 +2,11 @@
 
 A demonstration of using HLS (HTTP Live Streaming) video in podcast RSS feeds through the `podcast:alternateEnclosure` tag.
 
+## Demo Links
+
+- **📺 Live Demo**: https://podcast-standards-project.github.io/hls-video/
+- **📡 Demo RSS Feed**: https://podcast-standards-project.github.io/hls-video/feed.xml
+
 ## What We're Trying to Accomplish
 
 Traditional podcast RSS feeds are audio-first, but many creators now produce video content alongside their audio. Current solutions often require separate feeds or force users to choose between audio and video. 
@@ -44,11 +49,6 @@ Each episode includes a traditional audio enclosure followed by an alternate vid
 - `height="1080"` - Video resolution indicator
 - `rel="alternate"` - Marks this as alternative content to the primary audio
 - `.m3u8` URL - Points to the HLS manifest playlist
-
-## Demo Links
-
-- **📺 Live Demo**: https://podcast-standards-project.github.io/hls-video/
-- **📡 Demo RSS Feed**: https://podcast-standards-project.github.io/hls-video/feed.xml
 
 ## About HLS (HTTP Live Streaming)
 
