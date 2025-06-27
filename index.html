@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLS Video Podcast - Episode Preview</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="https://justinjackson.ca/hls-podcast/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://justinjackson.ca/hls-podcast/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://justinjackson.ca/hls-podcast/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://justinjackson.ca/hls-podcast/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="https://justinjackson.ca/hls-podcast/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="https://justinjackson.ca/hls-podcast/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="https://justinjackson.ca/hls-podcast/favicon/site.webmanifest">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        .header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        .content {
+            padding: 40px;
+        }
+        .episode-info {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .episode-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .episode-meta {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .episode-description {
+            color: #555;
+        }
+        .video-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+        video {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+        .btn-secondary:hover {
+            background: #cbd5e0;
+            transform: translateY(-2px);
+        }
+        .tech-info {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #718096;
+        }
+        .tech-info h3 {
+            margin: 0 0 15px 0;
+            color: #4a5568;
+        }
+        .status {
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .status.loading {
+            background: #fef5e7;
+            color: #975a16;
+        }
+        .status.ready {
+            background: #f0fff4;
+            color: #22543d;
+        }
+        .status.error {
+            background: #fed7d7;
+            color: #c53030;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>HLS Video Podcast</h1>
+            <p>Testing the future of video podcasting with HLS streaming</p>
+        </div>
+        
+        <div class="content">
+            <h1 style="text-align: center; color: #333; margin-bottom: 30px; font-size: 2em;">Sample video podcast episode</h1>
+
+            <div id="status" class="status loading">Loading video player...</div>
+            
+            <div class="video-container">
+                <video id="video" controls preload="metadata">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="links">
+                <a href="https://justinjackson.ca/hls-podcast/feed.xml" class="btn btn-primary" target="_blank">📟 View the RSS feed XML source</a>
+                <a href="https://media.transistor.fm/346d955d/8ba0f3fb.mp3" class="btn btn-secondary" target="_blank">🎧 Audio only version (MP3)</a>
+            </div>
+
+            <div class="tech-info">
+                <h3>🔧 Technical Details</h3>
+                <p><strong>What you're seeing:</strong> This demonstrates our proposed HLS video podcast standard using the <code>podcast:alternateEnclosure</code> tag. The RSS feed contains both traditional audio and HLS video streams, allowing podcast apps to offer video when supported while maintaining audio-first compatibility.</p>
+                <p><strong>HLS Benefits:</strong> Adaptive bitrate streaming, no large file downloads, automatic quality adjustment based on connection speed.</p>
+                <p><strong>Browser Support:</strong> Safari (native), Chrome/Firefox (via HLS.js), most modern video players.</p>
+                
+                <p><strong>Sample XML:</strong> In this example the alternateEnclosure sits underneath the legacy audio enclosure. This means that podcast apps will default to the audio version for compatibility, while video-capable apps can detect and use the HLS stream for enhanced viewing experiences.</p>
+                
+                <pre style="background: #2d3748; color: #e2e8f0; padding: 15px; border-radius: 6px; overflow-x: auto; font-size: 0.85em; margin: 10px 0;"><code>&lt;enclosure url="https://media.transistor.fm/346d955d/8ba0f3fb.mp3" length="27892766" type="audio/mpeg"/&gt;
+&lt;podcast:alternateEnclosure type="application/x-mpegURL" length="0" bitrate="2500000" height="1080" lang="en" title="HD Video Stream" rel="alternate"&gt;
+&lt;podcast:source uri="https://customer-wr8fi2zppse29pbk.cloudflarestream.com/18e048e0c31c0c238b46ddf581b25174/manifest/video.m3u8"/&gt;
+&lt;/podcast:alternateEnclosure&gt;</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script>
+        const video = document.getElementById('video');
+        const status = document.getElementById('status');
+        const hlsUrl = 'https://customer-wr8fi2zppse29pbk.cloudflarestream.com/18e048e0c31c0c238b46ddf581b25174/manifest/video.m3u8';
+
+        function updateStatus(message, type) {
+            status.textContent = message;
+            status.className = `status ${type}`;
+        }
+
+        if (Hls.isSupported()) {
+            const hls = new Hls({
+                debug: false,
+            });
+            
+            hls.loadSource(hlsUrl);
+            hls.attachMedia(video);
+            
+            hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+                updateStatus('✅ HLS video ready to play', 'ready');
+            });
+
+            hls.on(Hls.Events.ERROR, function (event, data) {
+                console.error('HLS error:', data);
+                updateStatus('❌ Error loading video stream', 'error');
+            });
+
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            // Safari native HLS support
+            video.src = hlsUrl;
+            video.addEventListener('loadedmetadata', function () {
+                updateStatus('✅ Video ready to play (native HLS)', 'ready');
+            });
+            video.addEventListener('error', function () {
+                updateStatus('❌ Error loading video stream', 'error');
+            });
+        } else {
+            updateStatus('❌ HLS not supported in this browser', 'error');
+        }
+    </script>
+
+    <!-- Cloudflare Pages Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f88d3068c5141af9fdad3535a40923f"}'></script>
+</body>
+</html>

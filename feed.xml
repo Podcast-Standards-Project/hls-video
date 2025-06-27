@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0">
+  <channel>
+    <atom:link rel="self" type="application/atom+xml" href="https://justinjackson.ca/hls-podcast/feed.xml" title="MP3 Audio"/>
+    <atom:link rel="hub" href="https://pubsubhubbub.appspot.com/"/>
+    <podcast:podping usesPodping="true"/>
+    <title>HLS Video Podcast</title>
+    <generator>Transistor (https://transistor.fm)</generator>
+    <itunes:new-feed-url>https://justinjackson.ca/hls-podcast/feed.xml</itunes:new-feed-url>
+    <description>Our proposed solution uses the alternate enclosure tag within a single RSS feed to offer both audio and HLS video streams. This "audio-first" approach maintains podcast app compatibility while enabling rich video experiences where supported.</description>
+    <copyright>© 2025 Justin Jackson</copyright>
+    <podcast:guid>c90d212d-0378-5f61-8974-f2a21b949ab3</podcast:guid>
+    <podcast:locked owner="justin@transistor.fm">no</podcast:locked>
+    <language>en</language>
+    <pubDate>Fri, 27 Jun 2025 14:40:50 -0700</pubDate>
+    <lastBuildDate>Fri, 27 Jun 2025 14:41:46 -0700</lastBuildDate>
+    <image>
+      <url>https://img.transistor.fm/fSrfDun5I-cQmTubRXRRU2KQnE1yamZ7DsfxKkYyLeE/rs:fill:3000:3000:1/q:60/aHR0cHM6Ly9pbWct/dXBsb2FkLXByb2R1/Y3Rpb24udHJhbnNp/c3Rvci5mbS81NGJh/OWU4ZWM2MjI5NjJj/NmIyZTlhNzFhNDcx/MTcxMy5qcGc.jpg</url>
+      <title>HLS Video Podcast</title>
+    </image>
+    <itunes:category text="Technology"/>
+    <itunes:category text="News">
+      <itunes:category text="Tech News"/>
+    </itunes:category>
+    <itunes:type>episodic</itunes:type>
+    <itunes:author>Justin Jackson</itunes:author>
+    <itunes:image href="https://img.transistor.fm/fSrfDun5I-cQmTubRXRRU2KQnE1yamZ7DsfxKkYyLeE/rs:fill:3000:3000:1/q:60/aHR0cHM6Ly9pbWct/dXBsb2FkLXByb2R1/Y3Rpb24udHJhbnNp/c3Rvci5mbS81NGJh/OWU4ZWM2MjI5NjJj/NmIyZTlhNzFhNDcx/MTcxMy5qcGc.jpg"/>
+    <itunes:summary>Our proposed solution uses the alternate enclosure tag within a single RSS feed to offer both audio and HLS video streams. This "audio-first" approach maintains podcast app compatibility while enabling rich video experiences where supported.</itunes:summary>
+    <itunes:subtitle>Our proposed solution uses the alternate enclosure tag within a single RSS feed to offer both audio and HLS video streams.</itunes:subtitle>
+    <itunes:keywords></itunes:keywords>
+    <itunes:owner>
+      <itunes:name>Justin Jackson</itunes:name>
+    </itunes:owner>
+    <itunes:complete>No</itunes:complete>
+    <itunes:explicit>No</itunes:explicit>
+    <item>
+      <title>"I've changed my mind on AI coding"</title>
+      <itunes:episode>1</itunes:episode>
+      <podcast:episode>1</podcast:episode>
+      <itunes:title>"I've changed my mind on AI coding"</itunes:title>
+      <itunes:episodeType>full</itunes:episodeType>
+      <guid isPermaLink="false">3f1a3cdc-9bcb-407b-94ee-af655ff20655</guid>
+      <link>https://share.transistor.fm/s/346d955d</link>
+      <description>
+        <![CDATA[<p>"I used to be more skeptical than I am now. Especially when everyone was talking about 'one-shotting' and 'vibe coding.' But then I forced myself to download Cursor and build an entire project without typing any code, making the computer type the code for me. I had to throw myself in the deep end."</p><p>All three of us (Adam, Brian, Justin) give our honest takes on AI and software development, and how it's going to affect our businesses.</p><p>"AI is like keyboard shortcuts on steroids for the things I am an expert in."</p><p>🎧 Listen to the whole episode on The Panel:<br>https://panelpodcast.com/11</p>]]>
+      </description>
+      <content:encoded>
+        <![CDATA[<p>"I used to be more skeptical than I am now. Especially when everyone was talking about 'one-shotting' and 'vibe coding.' But then I forced myself to download Cursor and build an entire project without typing any code, making the computer type the code for me. I had to throw myself in the deep end."</p><p>All three of us (Adam, Brian, Justin) give our honest takes on AI and software development, and how it's going to affect our businesses.</p><p>"AI is like keyboard shortcuts on steroids for the things I am an expert in."</p><p>🎧 Listen to the whole episode on The Panel:<br>https://panelpodcast.com/11</p>]]>
+      </content:encoded>
+      <pubDate>Fri, 27 Jun 2025 14:40:47 -0700</pubDate>
+      <author>Justin Jackson</author>
+      <enclosure url="https://media.transistor.fm/346d955d/8ba0f3fb.mp3" length="27892766" type="audio/mpeg"/>
+      <podcast:alternateEnclosure type="application/x-mpegURL" 
+                                 length="0" 
+                                 bitrate="2500000" 
+                                 height="1080" 
+                                 lang="en" 
+                                 title="HD Video Stream" 
+                                 rel="alternate">
+        <podcast:source uri="https://customer-wr8fi2zppse29pbk.cloudflarestream.com/18e048e0c31c0c238b46ddf581b25174/manifest/video.m3u8"/>
+      </podcast:alternateEnclosure>
+      <itunes:author>Justin Jackson</itunes:author>
+      <itunes:image href="https://img.transistor.fm/E-04HLWMtoWXBqBnNNND0ctuAWeajTQwjYeVtq6hFtY/rs:fill:3000:3000:1/q:60/aHR0cHM6Ly9pbWct/dXBsb2FkLXByb2R1/Y3Rpb24udHJhbnNp/c3Rvci5mbS8wMzNi/NTdmYWU3ZGM4YmIw/ZjhhNTEyNWZlNzM2/MDMzOC5qcGc.jpg"/>
+      <itunes:duration>1393</itunes:duration>
+      <itunes:summary>
+        <![CDATA[<p>"I used to be more skeptical than I am now. Especially when everyone was talking about 'one-shotting' and 'vibe coding.' But then I forced myself to download Cursor and build an entire project without typing any code, making the computer type the code for me. I had to throw myself in the deep end."</p><p>All three of us (Adam, Brian, Justin) give our honest takes on AI and software development, and how it's going to affect our businesses.</p><p>"AI is like keyboard shortcuts on steroids for the things I am an expert in."</p><p>🎧 Listen to the whole episode on The Panel:<br>https://panelpodcast.com/11</p>]]>
+      </itunes:summary>
+      <itunes:keywords></itunes:keywords>
+      <itunes:explicit>No</itunes:explicit>
+    </item>
+  </channel>
+</rss>
