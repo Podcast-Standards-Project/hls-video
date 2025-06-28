@@ -7,6 +7,12 @@ A demonstration of using HLS (HTTP Live Streaming) video in podcast RSS feeds th
 - **📺 Live Demo**: https://podcast-standards-project.github.io/hls-video/
 - **📡 Demo RSS Feed**: https://podcast-standards-project.github.io/hls-video/feed.xml
 
+## Update
+
+This is working in the Fountain listening app beta preview:
+
+https://youtu.be/XwxhmUCg-M0
+
 ## What We're Trying to Accomplish
 
 Traditional podcast RSS feeds are audio-first, but many creators now produce video content alongside their audio. Current solutions often require separate feeds or force users to choose between audio and video. 
