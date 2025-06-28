@@ -174,10 +174,22 @@
                 
                 <p><strong>Sample XML:</strong> In this example the alternateEnclosure sits underneath the legacy audio enclosure. This means that podcast apps will default to the audio version for compatibility, while video-capable apps can detect and use the HLS stream for enhanced viewing experiences.</p>
                 
-                <pre style="background: #2d3748; color: #e2e8f0; padding: 15px; border-radius: 6px; overflow-x: auto; font-size: 0.85em; margin: 10px 0;"><code>&lt;enclosure url="https://media.transistor.fm/346d955d/8ba0f3fb.mp3" length="27892766" type="audio/mpeg"/&gt;
-&lt;podcast:alternateEnclosure type="application/x-mpegURL" length="0" bitrate="2500000" height="1080" lang="en" title="HD Video Stream" rel="alternate"&gt;
-&lt;podcast:source uri="https://customer-wr8fi2zppse29pbk.cloudflarestream.com/18e048e0c31c0c238b46ddf581b25174/manifest/video.m3u8"/&gt;
-&lt;/podcast:alternateEnclosure&gt;</code></pre>
+                <div style="position: relative;">
+                    <button id="copyBtn" onclick="copyXML()" style="position: absolute; top: 15px; right: 15px; background: #4a5568; color: white; border: none; padding: 8px 12px; border-radius: 4px; font-size: 0.8em; cursor: pointer; z-index: 10;">Copy XML</button>
+                    <pre style="background: #2d3748; color: #e2e8f0; padding: 20px; border-radius: 8px; overflow-x: auto; font-size: 0.95em; margin: 15px 0; line-height: 1.6; white-space: pre-wrap; word-wrap: break-word;"><code><span style="color: #e2e8f0;">&lt;</span><span style="color: #68d391;">enclosure</span> <span style="color: #90cdf4;">url</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"https://media.transistor.fm/346d955d/8ba0f3fb.mp3"</span> 
+          <span style="color: #90cdf4;">length</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"27892766"</span> 
+          <span style="color: #90cdf4;">type</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"audio/mpeg"</span><span style="color: #e2e8f0;">/&gt;</span>
+
+<span style="color: #e2e8f0;">&lt;</span><span style="color: #68d391;">podcast:alternateEnclosure</span> <span style="color: #90cdf4;">type</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"application/x-mpegURL"</span> 
+                             <span style="color: #90cdf4;">length</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"0"</span> 
+                             <span style="color: #90cdf4;">bitrate</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"2500000"</span> 
+                             <span style="color: #90cdf4;">height</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"1080"</span> 
+                             <span style="color: #90cdf4;">lang</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"en"</span> 
+                             <span style="color: #90cdf4;">title</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"HD Video Stream"</span> 
+                             <span style="color: #90cdf4;">rel</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"alternate"</span><span style="color: #e2e8f0;">&gt;</span>
+    <span style="color: #e2e8f0;">&lt;</span><span style="color: #68d391;">podcast:source</span> <span style="color: #90cdf4;">uri</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"https://customer-wr8fi2zppse29pbk.cloudflarestream.com/18e048e0c31c0c238b46ddf581b25174/manifest/video.m3u8"</span><span style="color: #e2e8f0;">/&gt;</span>
+<span style="color: #e2e8f0;">&lt;/</span><span style="color: #68d391;">podcast:alternateEnclosure</span><span style="color: #e2e8f0;">&gt;</span></code></pre>
+                </div>
             </div>
             
             <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid #e2e8f0;">
@@ -231,6 +243,31 @@
                 }
             }, 100);
         });
+
+        function copyXML() {
+            const xmlText = `<enclosure url="https://media.transistor.fm/346d955d/8ba0f3fb.mp3" length="27892766" type="audio/mpeg"/>
+<podcast:alternateEnclosure type="application/x-mpegURL" length="0" bitrate="2500000" height="1080" lang="en" title="HD Video Stream" rel="alternate">
+<podcast:source uri="https://customer-wr8fi2zppse29pbk.cloudflarestream.com/18e048e0c31c0c238b46ddf581b25174/manifest/video.m3u8"/>
+</podcast:alternateEnclosure>`;
+            
+            navigator.clipboard.writeText(xmlText).then(function() {
+                const btn = document.getElementById('copyBtn');
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Copied!';
+                btn.style.background = '#48bb78';
+                setTimeout(function() {
+                    btn.textContent = originalText;
+                    btn.style.background = '#4a5568';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Failed to copy: ', err);
+                const btn = document.getElementById('copyBtn');
+                btn.textContent = '❌ Failed';
+                setTimeout(function() {
+                    btn.textContent = 'Copy XML';
+                }, 2000);
+            });
+        }
     </script>
 </body>
 </html>
