@@ -205,7 +205,7 @@
                              <span style="color: #90cdf4;">lang</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"en"</span> 
                              <span style="color: #90cdf4;">title</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"HD Video Stream"</span> 
                              <span style="color: #90cdf4;">rel</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"alternate"</span><span style="color: #e2e8f0;">&gt;</span>
-    <span style="color: #e2e8f0;">&lt;</span><span style="color: #68d391;">podcast:source</span> <span style="color: #90cdf4;">uri</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"https://customer-wr8fi2zppse29pbk.cloudflarestream.com/18e048e0c31c0c238b46ddf581b25174/manifest/video.m3u8"</span><span style="color: #e2e8f0;">/&gt;</span>
+    <span style="color: #e2e8f0;">&lt;</span><span style="color: #68d391;">podcast:source</span> <span style="color: #90cdf4;">uri</span><span style="color: #e2e8f0;">=</span><span style="color: #fbb6ce;">"https://customer-wr8fi2zppse29pbk.cloudflarestream.com/690fa0cfc05a4b5b454cdf62f89b73f2/manifest/video.m3u8"</span><span style="color: #e2e8f0;">/&gt;</span>
 <span style="color: #e2e8f0;">&lt;/</span><span style="color: #68d391;">podcast:alternateEnclosure</span><span style="color: #e2e8f0;">&gt;</span></code></pre>
                 </div>
             </div>
@@ -221,7 +221,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const video = document.getElementById('video');
             const status = document.getElementById('status');
-            const hlsUrl = 'https://customer-wr8fi2zppse29pbk.cloudflarestream.com/18e048e0c31c0c238b46ddf581b25174/manifest/video.m3u8';
+            const hlsUrl = 'https://customer-wr8fi2zppse29pbk.cloudflarestream.com/690fa0cfc05a4b5b454cdf62f89b73f2/manifest/video.m3u8';
 
             function updateStatus(message, type) {
                 status.textContent = message;
@@ -265,7 +265,7 @@
         function copyXML() {
             const xmlText = `<enclosure url="https://media.transistor.fm/346d955d/8ba0f3fb.mp3" length="27892766" type="audio/mpeg"/>
 <podcast:alternateEnclosure type="application/x-mpegURL" length="0" bitrate="2500000" height="1080" lang="en" title="HD Video Stream" rel="alternate">
-<podcast:source uri="https://customer-wr8fi2zppse29pbk.cloudflarestream.com/18e048e0c31c0c238b46ddf581b25174/manifest/video.m3u8"/>
+<podcast:source uri="https://customer-wr8fi2zppse29pbk.cloudflarestream.com/690fa0cfc05a4b5b454cdf62f89b73f2/manifest/video.m3u8"/>
 </podcast:alternateEnclosure>`;
             
             navigator.clipboard.writeText(xmlText).then(function() {
