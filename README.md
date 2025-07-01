@@ -1,6 +1,6 @@
-# HLS Video Podcast Demo
+# HLS Video Podcast Proposal
 
-A demonstration of using HLS (HTTP Live Streaming) video in podcast RSS feeds through the `podcast:alternateEnclosure` tag.
+Using HLS (HTTP Live Streaming) video in podcast RSS feeds through the `podcast:alternateEnclosure` tag.
 
 ## Demo Links
 
@@ -30,7 +30,7 @@ Our proposed solution uses the `podcast:alternateEnclosure` tag to offer **both 
 
 ## The Technical Approach
 
-### RSS Feed Structure
+### Proposed RSS Feed Structure
 
 Each episode includes a traditional audio enclosure followed by an alternate video enclosure:
 
